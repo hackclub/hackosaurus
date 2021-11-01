@@ -4,7 +4,9 @@
   "description": "A bot for hackthon.hackclub.com that takes it to the moon 🚀",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
