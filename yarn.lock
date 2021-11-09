@@ -7,21 +7,21 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-4.2.0.tgz#667bfc6186ae7c9e0b45a08960c551437176e1ca"
   integrity sha512-VkE3KLBmJwcCaVARtQpfuKcKv8gcBmUubrfHGF84dXuuW6jgsRYxPtzcIhPyK9WAPpRt2/xY6zkD9MnRaJzSyw==
 
-"@slack/bolt@^3.7.0":
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/@slack/bolt/-/bolt-3.7.0.tgz#ee421f14b04315bac7563cb8a9d71e43e251343b"
-  integrity sha512-apAmcf68mF4kvdhXxgqt29EtoKMT0eVHQhIT3BVm6EpViaQFUO2n6jTguYzomZJQ/RGj5JiWcv4SKzJEfqhZTA==
+"@slack/bolt@^3.8.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@slack/bolt/-/bolt-3.8.1.tgz#c593e3bde38cc2a9a3c79f9a1b56247900628c1f"
+  integrity sha512-V0u/39o8rflrQuVI5JoRCpTxXra7J1CxDzlv97xpETamH82nZotN2lOAiTKjWwsX1uX8B+dHb3th46qRIZgZyA==
   dependencies:
     "@slack/logger" "^3.0.0"
     "@slack/oauth" "^2.3.0"
-    "@slack/socket-mode" "^1.1.0"
+    "@slack/socket-mode" "^1.2.0"
     "@slack/types" "^2.2.0"
     "@slack/web-api" "^6.4.0"
     "@types/express" "^4.16.1"
     "@types/node" ">=12"
     "@types/promise.allsettled" "^1.0.3"
     "@types/tsscmp" "^1.0.0"
-    axios "^0.21.1"
+    axios "^0.21.4"
     express "^4.16.4"
     please-upgrade-node "^3.2.0"
     promise.allsettled "^1.0.2"
@@ -47,7 +47,7 @@
     jsonwebtoken "^8.5.1"
     lodash.isstring "^4.0.1"
 
-"@slack/socket-mode@^1.1.0":
+"@slack/socket-mode@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@slack/socket-mode/-/socket-mode-1.2.0.tgz#1a64fa3b5e864e7495391e142ad56ff0a80193c8"
   integrity sha512-k+WAeMoeiivome/cfscyAHfVFL8/mPhz3p6NIz/LA9vJ1nv2cEPow/wLqzWM73xqlHARCxQWh3gqLqCPHvhXbg==
@@ -78,6 +78,23 @@
     "@types/is-stream" "^1.1.0"
     "@types/node" ">=12.0.0"
     axios "^0.21.1"
+    eventemitter3 "^3.1.0"
+    form-data "^2.5.0"
+    is-electron "^2.2.0"
+    is-stream "^1.1.0"
+    p-queue "^6.6.1"
+    p-retry "^4.0.0"
+
+"@slack/web-api@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@slack/web-api/-/web-api-6.5.0.tgz#588a1319e198ff7a438ef54341e9dc6bdb9fe937"
+  integrity sha512-yQOipaMZVj2R/CxTQa3CuE1XAmgjxaxQFCY1/GPsdpy1rRGeB8hCQPcQf4WPxsM2b7rSVMicF9qFjKPVP+cYbw==
+  dependencies:
+    "@slack/logger" "^3.0.0"
+    "@slack/types" "^2.0.0"
+    "@types/is-stream" "^1.1.0"
+    "@types/node" ">=12.0.0"
+    axios "^0.24.0"
     eventemitter3 "^3.1.0"
     form-data "^2.5.0"
     is-electron "^2.2.0"
@@ -263,12 +280,19 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-axios@^0.21.1:
+axios@^0.21.1, axios@^0.21.4:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
   dependencies:
     follow-redirects "^1.14.0"
+
+axios@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+  dependencies:
+    follow-redirects "^1.14.4"
 
 binary@^0.3.0:
   version "0.3.0"
@@ -594,7 +618,7 @@ finity@^0.5.4:
   resolved "https://registry.yarnpkg.com/finity/-/finity-0.5.4.tgz#f2a8a9198e8286467328ec32c8bfcc19a2229c11"
   integrity sha512-3l+5/1tuw616Lgb0QBimxfdd2TqaDGpfCBpfX6EqtFmqUV3FtQnVEX4Aa62DagYEqnsTIjZcTfbq9msDbXYgyA==
 
-follow-redirects@^1.14.0:
+follow-redirects@^1.14.0, follow-redirects@^1.14.4:
   version "1.14.5"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
   integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==

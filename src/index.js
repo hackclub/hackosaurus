@@ -1,19 +1,28 @@
-const express = require("express");
-const ngrok = require("ngrok");
+const dotenv = require("dotenv");
+dotenv.config();
 
-(async function () {
-  const port = process.env.PORT ?? 3000;
+const { App } = require("@slack/bolt");
+const { WebClient, LogLevel } = require("@slack/web-api");
+const { oauth_token, app_token } = require("../lib/data");
 
-  const url = await ngrok.connect(port);
-  console.log(`tunnel setup on  ${url} for port ${port} 🚀`);
+// starting the server here!
+require("./server");
 
-  const app = express();
+const client = new WebClient(oauth_token, {
+  logLevel: LogLevel.DEBUG,
+});
 
-  app.post("/hook", (req, res) => {
-    res.send("Hello World");
-  });
+const app = new App({
+  token: oauth_token,
+  appToken: app_token,
+  socketMode: true,
+});
 
-  app.listen(port, () => {
-    console.log(`epxress server started on localhost://${port} 🦕`);
-  });
+(async () => {
+  await app.start();
+  console.log("⚡️ Bolt app started");
 })();
+
+app.event("app_mention", async (args) => {
+  await args.say("mic check!");
+});
